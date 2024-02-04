@@ -13,8 +13,9 @@ export const pokemonSlice = createSlice({
             state.isLoading = true;
         },
         setPokemons: ( state, action ) => {
-            //! https://react-redux.js.org/tutorials/quick-start
-            console.log(action.payload)
+            state.isLoading = false;
+            state.page = action.payload.page;
+            state.pokemons = action.payload.pokemons;
         },
     }
 });
