@@ -21,6 +21,10 @@ div.info {
     display:-webkit-box;
 }
 
+/* img {
+    width: 140px;
+} */
+
 h2 {
     position: absolute;
     bottom: 0;
