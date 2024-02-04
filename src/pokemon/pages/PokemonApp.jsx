@@ -1,41 +1,39 @@
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { getPokemons } from "../../store/slices/pokemon/thunks";
-import { startLoadingPokemons, setPokemons } from '../../store';
 import { useSelector } from "react-redux";
+import { PokemonList } from "../components";
 
 export const PokemonApp = () => {
 
   const { pokemons, isLoading, page } = useSelector((state) => state.pokemons);
   const dispatch = useDispatch();
 
-  console.log(pokemons)
-
   useEffect(() => {
 
-    dispatch(getPokemons());
+    dispatch(getPokemons(page));
 
   }, [page])
 
   return (
     <>
-      <h1>PokemonApp</h1>
-      <hr />
+      <h1>Pokémon List</h1>
       {
-        (isLoading) ? <span className="loading-alert">Loading...</span> : ''
+        (isLoading)
+          ? <span className="loading-alert">Loading...</span>
+          : <PokemonList
+            pokemons={pokemons}
+          />
       }
 
-      {
-        pokemons.map((pokemon) => (
-          <div>
-            {pokemon.name}
-          </div>
-        ))
-      }
-
-      {/* <button onClick={ () => dispatch( getPokemons(page) ) }>
-        Next
-      </button> */}
+      <div className="buttons">
+        <button disabled={(isLoading || page === 0 ? 'disabled' : '')} onClick={() => dispatch(getPokemons(page-1))}>
+          Prev
+        </button>
+        <button disabled={(isLoading ? 'disabled' : '')} onClick={() => dispatch(getPokemons(page+1))}>
+          Next
+        </button>
+      </div>
     </>
   )
 }

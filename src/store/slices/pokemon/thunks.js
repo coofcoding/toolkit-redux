@@ -2,6 +2,7 @@ import { pokemonApi } from "../../../api/pokemonApi";
 import { setPokemons, startLoadingPokemons } from "./pokemonSlice"
 
 export const getPokemons = (page = 0) => {
+
     return async (dispatch, getState) => {
         dispatch(startLoadingPokemons());
 
@@ -24,7 +25,7 @@ export const getPokemons = (page = 0) => {
 
         dispatch(setPokemons({
             pokemons: withImages,
-            page: page + 1
+            page
         })
         )
     }

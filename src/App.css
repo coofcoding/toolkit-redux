@@ -1,8 +1,17 @@
 #root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem;
   text-align: center;
+}
+
+@media ( width <= 420px ) {
+  #root {
+    padding: 0;
+  }
 }
 
 .logo {

@@ -1,8 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
-import { store } from './store/store';
 import { decrement, increment, incrementBy } from './store/slices/counter';
 
 function App() {

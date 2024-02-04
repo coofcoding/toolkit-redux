@@ -1,0 +1,39 @@
+.pokemon-card {
+    background-color: #ffffff08;
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.pokemon-card:hover {
+    background-color: #ffffff08;
+    border: 1px solid #ffffff10;
+}
+
+div.info {
+    position: relative;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
+}
+
+h2 {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: fit-content;
+    border: 1px solid #ffffff10;
+    margin: 0;
+    pointer-events: none;
+    padding: 3px 10px;
+    border-radius: 10px;
+    transform: translateY(10px);
+    background-color: #1b1b1b;
+    font-weight: 500;
+    font-size: 15px;
+    color: #ffffff70;
+}
