@@ -77,6 +77,41 @@ button {
   transition: border-color 0.25s;
 }
 
+ul {
+  text-align: left;
+  list-style: none;
+}
+
+
+
+li {
+  background-color: #ffffff08;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid transparent;
+}
+
+li.fail {
+  border: 1px solid #c4c4c422;
+  background-color: #ffffff08;
+  color: #ffffff;
+}
+
+li.success {
+  border: 1px solid #a9a9a922;
+  background-color: #89898908;
+  color: #797979;
+  text-decoration: line-through;
+}
+
+span.state {
+  opacity: 50%;
+  font-size: 13px;
+}
+
 button:disabled {
   cursor: no-drop;
   color: #ffffff60;
